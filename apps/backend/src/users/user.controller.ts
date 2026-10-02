@@ -17,7 +17,7 @@ export function createUserController(service: UserService) {
 
     getUser(request: Request, response: Response, next: NextFunction): void {
       try {
-        response.json(service.getUser(request.params.id));
+        response.json(service.getUser(String(request.params.id)));
       } catch (error) {
         next(error);
       }
@@ -26,7 +26,7 @@ export function createUserController(service: UserService) {
     updateProfile(request: Request, response: Response, next: NextFunction): void {
       try {
         const input = updateProfileSchema.parse(request.body);
-        response.json(service.updateProfile(request.params.id, input));
+        response.json(service.updateProfile(String(request.params.id), input));
       } catch (error) {
         next(error);
       }
