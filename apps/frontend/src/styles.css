@@ -1,0 +1,94 @@
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #15233f;
+  background: #f5f7fb;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+a { color: #255bb8; text-decoration: none; }
+button, input { font: inherit; }
+
+.app-shell {
+  width: min(1040px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 48px 0 80px;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.detail-header { margin-top: 30px; }
+h1 { margin: 4px 0 0; font-size: 2.1rem; }
+.eyebrow { margin: 0; color: #66758f; font-weight: 700; text-transform: uppercase; font-size: .75rem; letter-spacing: .12em; }
+
+.baseline-label,
+.status-badge {
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-weight: 750;
+  font-size: .8rem;
+}
+.baseline-label { background: #e8eefb; color: #315a9d; }
+.status-active { background: #dff6e9; color: #16633b; }
+
+.user-grid { display: grid; gap: 12px; }
+.user-card {
+  background: white;
+  border: 1px solid #dce3ef;
+  border-radius: 14px;
+  padding: 18px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 8px 25px rgba(25, 45, 80, .05);
+}
+.user-card strong, .user-card span { display: block; }
+.user-card span { color: #6d7890; margin-top: 4px; }
+
+.notice {
+  background: #fff8df;
+  border: 1px solid #efdda0;
+  padding: 14px 16px;
+  border-radius: 10px;
+  margin-bottom: 24px;
+}
+
+.profile-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  background: white;
+  border: 1px solid #dce3ef;
+  padding: 24px;
+  border-radius: 14px;
+}
+.profile-form label { display: grid; gap: 7px; font-weight: 650; }
+.profile-form input {
+  border: 1px solid #c9d3e4;
+  border-radius: 8px;
+  padding: 11px 12px;
+}
+.profile-form button {
+  width: fit-content;
+  border: 0;
+  border-radius: 8px;
+  padding: 11px 18px;
+  background: #255bb8;
+  color: white;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.success-message { color: #16633b; }
+.error-message { color: #a32929; }
+
+@media (max-width: 700px) {
+  .profile-form { grid-template-columns: 1fr; }
+  .page-header { align-items: flex-start; }
+}
