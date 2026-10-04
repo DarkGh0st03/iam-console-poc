@@ -63,12 +63,19 @@ iam-console-poc/
 
 `security/` is intentionally separated from application feature code. In the thesis PoC this directory will be treated as a **protected, out-of-scope resource** for specialized agents.
 
+## Reproducible toolchain
+
+The baseline is pinned to:
+
+- Node.js `22.15.0`;
+- npm `10.9.2`.
+
+The repository includes `package-lock.json`; use `npm ci` for reproducible dependency installation. A matching Node version is also declared in `.nvmrc`.
+
 ## Run locally
 
-Requirements: Node.js 20+ and npm.
-
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
@@ -80,11 +87,12 @@ The frontend sends the demo administrative role header required by the backend s
 ## Test and build
 
 ```bash
+npm run typecheck
 npm test
 npm run build
 ```
 
-For end-to-end tests, first install Playwright's browser once:
+For end-to-end tests, install Playwright's Chromium browser once:
 
 ```bash
 npx playwright install chromium
