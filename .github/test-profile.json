@@ -32,11 +32,13 @@
   "test_sources": {
     "roots": [
       "tests/backend",
-      "tests/frontend"
+      "tests/frontend",
+      "tests/e2e"
     ],
     "suffixes": [
       ".test.ts",
-      ".test.tsx"
+      ".test.tsx",
+      ".spec.ts"
     ]
   }
 }
