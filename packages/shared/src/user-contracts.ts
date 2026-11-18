@@ -4,11 +4,11 @@ export interface UserSummary {
   id: string;
   displayName: string;
   email: string;
+  department: string;
   status: AccountStatus;
 }
 
 export interface UserDetails extends UserSummary {
-  department: string;
   jobTitle: string;
 }
 

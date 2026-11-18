@@ -12,7 +12,7 @@ export default defineConfig({
       reuseExistingServer: true
     },
     {
-      command: "npm run dev:frontend -- --host 127.0.0.1",
+      command: "npm run dev -w @iam/frontend -- --host 127.0.0.1",
       port: 5173,
       reuseExistingServer: true
     }

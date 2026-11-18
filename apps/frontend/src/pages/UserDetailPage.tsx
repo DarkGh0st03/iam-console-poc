@@ -2,6 +2,8 @@ import { FormEvent, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import type { UpdateUserProfileInput, UserDetails } from "@iam/shared";
 import { getUser, updateUserProfile } from "../api/users-api.js";
+import { DepartmentTag } from "../components/DepartmentTag.js";
+import { UserAvatar } from "../components/UserAvatar.js";
 import { UserStatusBadge } from "../components/UserStatusBadge.js";
 
 export function UserDetailPage() {
@@ -52,12 +54,18 @@ export function UserDetailPage() {
 
   return (
     <section>
-      <Link to="/">← Back to users</Link>
+      <Link className="back-link" to="/">← Back to users</Link>
 
       <div className="page-header detail-header">
-        <div>
-          <p className="eyebrow">User details</p>
-          <h1>{user.displayName}</h1>
+        <div className="detail-identity">
+          <UserAvatar name={user.displayName} department={user.department} size="large" />
+          <div>
+            <p className="eyebrow">User details</p>
+            <h1>{user.displayName}</h1>
+            <p className="page-subtitle">
+              {user.jobTitle} · <DepartmentTag department={user.department} />
+            </p>
+          </div>
         </div>
         <UserStatusBadge status={user.status} />
       </div>

@@ -15,7 +15,8 @@ describe("User API baseline", () => {
       .set(ADMIN)
       .expect(200);
 
-    expect(response.body).toHaveLength(3);
+    expect(response.body).toHaveLength(7);
+    expect(response.body[0]).toMatchObject({ displayName: "Alice Romano", department: "Engineering" });
   });
 
   it("supports profile updates", async () => {

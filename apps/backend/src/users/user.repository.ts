@@ -25,6 +25,38 @@ const DEFAULT_USERS: UserEntity[] = [
     department: "Human Resources",
     jobTitle: "HR Specialist",
     status: ACCOUNT_STATUS.ACTIVE
+  },
+  {
+    id: "usr-004",
+    displayName: "Luca Ferrari",
+    email: "luca.ferrari@example.test",
+    department: "Engineering",
+    jobTitle: "DevOps Engineer",
+    status: ACCOUNT_STATUS.ACTIVE
+  },
+  {
+    id: "usr-005",
+    displayName: "Giulia Esposito",
+    email: "giulia.esposito@example.test",
+    department: "Marketing",
+    jobTitle: "Marketing Manager",
+    status: ACCOUNT_STATUS.ACTIVE
+  },
+  {
+    id: "usr-006",
+    displayName: "Davide Ricci",
+    email: "davide.ricci@example.test",
+    department: "Finance",
+    jobTitle: "Accountant",
+    status: ACCOUNT_STATUS.ACTIVE
+  },
+  {
+    id: "usr-007",
+    displayName: "Elena Moretti",
+    email: "elena.moretti@example.test",
+    department: "Sales",
+    jobTitle: "Account Executive",
+    status: ACCOUNT_STATUS.ACTIVE
   }
 ];
 

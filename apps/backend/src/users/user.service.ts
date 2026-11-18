@@ -16,10 +16,11 @@ export class UserService {
   constructor(private readonly repository: InMemoryUserRepository) {}
 
   listUsers(): UserSummary[] {
-    return this.repository.findAll().map(({ id, displayName, email, status }) => ({
+    return this.repository.findAll().map(({ id, displayName, email, department, status }) => ({
       id,
       displayName,
       email,
+      department,
       status
     }));
   }

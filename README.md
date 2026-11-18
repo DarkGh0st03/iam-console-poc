@@ -8,7 +8,8 @@ This repository intentionally represents the **baseline before the Account Suspe
 
 The administration console currently supports:
 
-- listing users;
+- listing users (seven seeded users across five departments, each shown with
+  an initials avatar and a colour-coded department tag);
 - viewing user details;
 - editing basic profile information;
 - displaying the current account status (`ACTIVE`).

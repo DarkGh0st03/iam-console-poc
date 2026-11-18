@@ -5,7 +5,7 @@ import { UserService } from "../../apps/backend/src/users/user.service.js";
 describe("UserService baseline", () => {
   it("lists seeded users", () => {
     const service = new UserService(new InMemoryUserRepository());
-    expect(service.listUsers()).toHaveLength(3);
+    expect(service.listUsers()).toHaveLength(7);
     expect(service.listUsers().every((user) => user.status === "ACTIVE")).toBe(true);
   });
 
