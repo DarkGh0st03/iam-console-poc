@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { InMemoryUserRepository } from "../../apps/backend/src/users/user.repository.js";
 import { UserService } from "../../apps/backend/src/users/user.service.js";
 
-describe("UserService baseline", () => {
+describe("UserService", () => {
   it("lists seeded users", () => {
     const service = new UserService(new InMemoryUserRepository());
     expect(service.listUsers()).toHaveLength(7);

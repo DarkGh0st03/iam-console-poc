@@ -8,8 +8,8 @@ afterEach(() => {
   vi.unstubAllGlobals();
 });
 
-describe("UserDetailPage baseline", () => {
-  it("shows the current status but no suspension action", async () => {
+describe("UserDetailPage", () => {
+  it("shows the user's details and account status", async () => {
     vi.stubGlobal(
       "fetch",
       vi.fn().mockResolvedValue({
@@ -35,6 +35,6 @@ describe("UserDetailPage baseline", () => {
 
     await waitFor(() => expect(screen.getByText("Alice Romano")).toBeInTheDocument());
     expect(screen.getByText("ACTIVE")).toBeInTheDocument();
-    expect(screen.queryByRole("button", { name: /suspend/i })).not.toBeInTheDocument();
+    expect(screen.getByDisplayValue("Software Engineer")).toBeInTheDocument();
   });
 });

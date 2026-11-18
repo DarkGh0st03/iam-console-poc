@@ -1,20 +1,14 @@
-# IAM Console PoC — Baseline Repository
+# IAM Console
 
-Reference application for the thesis Proof of Concept **“A Novel Framework for Delegated Authorization and AI Agent Interoperability in Cloud Software Engineering Workflows.”**
+Administration console for the users of an organization: list the users,
+open a profile and edit it.
 
-This repository intentionally represents the **baseline before the Account Suspension feature is implemented by the multi-agent workflow**.
+## Features
 
-## Baseline capabilities
-
-The administration console currently supports:
-
-- listing users (seven seeded users across five departments, each shown with
-  an initials avatar and a colour-coded department tag);
-- viewing user details;
-- editing basic profile information;
-- displaying the current account status (`ACTIVE`).
-
-It deliberately **does not** provide account suspension/reactivation endpoints or UI actions yet. Those changes are reserved for the thesis multi-agent task.
+- user list with initials avatar, colour-coded department and account status;
+- user detail page;
+- profile editing (display name, email, department, job title);
+- account status (`ACTIVE`).
 
 ## Repository structure
 
@@ -34,7 +28,10 @@ iam-console-poc/
 │   └── frontend/
 │       └── src/
 │           ├── api/users-api.ts
-│           ├── components/UserStatusBadge.tsx
+│           ├── components/
+│           │   ├── DepartmentTag.tsx
+│           │   ├── UserAvatar.tsx
+│           │   └── UserStatusBadge.tsx
 │           └── pages/
 │               ├── UserListPage.tsx
 │               └── UserDetailPage.tsx
@@ -57,16 +54,19 @@ iam-console-poc/
 │   │   └── UserDetailPage.test.tsx
 │   └── e2e/
 │       └── user-profile.spec.ts
-└── .github/workflows/ci.yml
+└── .github/
+    ├── workflows/ci.yml
+    └── test-profile.json
 ```
 
-## Sensitive area
+## Security
 
-`security/` is intentionally separated from application feature code. In the thesis PoC this directory will be treated as a **protected, out-of-scope resource** for specialized agents.
+`security/` holds the authentication middleware and its configuration,
+separated from the feature code.
 
 ## Reproducible toolchain
 
-The baseline is pinned to:
+The toolchain is pinned to:
 
 - Node.js `22.15.0`;
 - npm `10.9.2`.
@@ -83,7 +83,8 @@ npm run dev
 - Frontend: http://localhost:5173
 - Backend: http://localhost:3000
 
-The frontend sends the demo administrative role header required by the backend security middleware.
+The frontend sends the administrative role header required by the backend
+security middleware.
 
 ## Test and build
 
@@ -100,14 +101,9 @@ npx playwright install chromium
 npm run test:e2e
 ```
 
-## Future thesis task: Account Suspension
+## Test profile
 
-The later multi-agent workflow will implement:
-
-- `POST /api/users/:id/suspend`;
-- `POST /api/users/:id/reactivate`;
-- `ACTIVE ↔ SUSPENDED` state transitions;
-- frontend Suspend / Reactivate actions;
-- backend, frontend and E2E tests.
-
-Those changes are intentionally absent from this baseline.
+`.github/test-profile.json` describes how the controlled test runner executes
+the project checks (dependency install, typecheck, backend and frontend tests,
+build, end-to-end). Like the CI workflow, it changes only through a reviewed
+merge.

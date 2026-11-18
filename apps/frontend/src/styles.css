@@ -94,7 +94,6 @@ h1 { margin: 4px 0 0; font-size: 2.2rem; font-weight: 800; color: #134e4a; }
   flex-wrap: wrap;
 }
 
-.baseline-label,
 .status-badge {
   border-radius: 999px;
   padding: 7px 13px;
@@ -102,7 +101,6 @@ h1 { margin: 4px 0 0; font-size: 2.2rem; font-weight: 800; color: #134e4a; }
   font-size: .78rem;
   letter-spacing: .03em;
 }
-.baseline-label { background: #ffedd5; color: #9a3412; border: 1px solid #fed7aa; }
 .status-active { background: #dcfce7; color: #15803d; border: 1px solid #bbf7d0; }
 
 /* User list */
@@ -166,16 +164,6 @@ h1 { margin: 4px 0 0; font-size: 2.2rem; font-weight: 800; color: #134e4a; }
 /* Detail page */
 .back-link { font-weight: 700; }
 .back-link:hover { color: var(--accent); }
-
-.notice {
-  background: #fff7ed;
-  border: 1px solid #fed7aa;
-  border-left: 5px solid var(--accent);
-  padding: 14px 16px;
-  border-radius: 12px;
-  margin-bottom: 24px;
-  color: #7c2d12;
-}
 
 .profile-form {
   display: grid;

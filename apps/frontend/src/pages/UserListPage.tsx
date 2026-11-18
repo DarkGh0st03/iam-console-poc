@@ -28,7 +28,6 @@ export function UserListPage() {
             {users.length} people across {departments} departments
           </p>
         </div>
-        <span className="baseline-label">Baseline</span>
       </div>
 
       {error ? <p className="error-message">{error}</p> : null}

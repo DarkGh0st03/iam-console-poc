@@ -4,7 +4,7 @@ import { createApp } from "../../apps/backend/src/app.js";
 
 const ADMIN = { "x-demo-role": "admin" };
 
-describe("User API baseline", () => {
+describe("User API", () => {
   it("rejects unauthenticated user requests", async () => {
     await request(createApp()).get("/api/users").expect(401);
   });
@@ -33,12 +33,5 @@ describe("User API baseline", () => {
 
     expect(response.body.displayName).toBe("Alice Updated");
     expect(response.body.status).toBe("ACTIVE");
-  });
-
-  it("does not expose account suspension endpoints in the baseline", async () => {
-    await request(createApp())
-      .post("/api/users/usr-001/suspend")
-      .set(ADMIN)
-      .expect(404);
   });
 });

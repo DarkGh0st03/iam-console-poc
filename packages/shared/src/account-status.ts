@@ -1,8 +1,4 @@
-/**
- * Baseline account states.
- *
- * The Account Suspension thesis task will extend this type with SUSPENDED.
- */
+/** States of a user account. */
 export type AccountStatus = "ACTIVE";
 
 export const ACCOUNT_STATUS = {

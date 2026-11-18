@@ -70,11 +70,6 @@ export function UserDetailPage() {
         <UserStatusBadge status={user.status} />
       </div>
 
-      <div className="notice">
-        Account status is currently read-only in this baseline. Suspension and
-        reactivation are intentionally not implemented yet.
-      </div>
-
       <form className="profile-form" onSubmit={handleSubmit}>
         <label>
           Display name
