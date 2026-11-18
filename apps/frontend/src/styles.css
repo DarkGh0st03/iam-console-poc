@@ -25,7 +25,44 @@ body {
     var(--bg);
 }
 a { color: var(--brand); text-decoration: none; }
-button, input { font: inherit; }
+button, input, select, textarea { font: inherit; color: inherit; }
+
+/* Form controls: every label, input, select and textarea in the app shares
+   one look, so new controls match the existing ones without extra CSS. */
+label { font-weight: 700; color: #134e4a; }
+input:not([type="checkbox"]):not([type="radio"]), select, textarea {
+  border: 1px solid #d9cfc4;
+  border-radius: 10px;
+  padding: 10px 12px;
+  min-height: 44px;
+  background: #fffdfa;
+  color: var(--ink);
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+input::placeholder, textarea::placeholder { color: #9aa5a8; }
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--brand-bright);
+  box-shadow: 0 0 0 4px var(--focus);
+}
+select { cursor: pointer; }
+
+/* .toolbar: a row of filters or actions above a list; .field: one labelled
+   control inside it (label text, then the control). */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 14px 18px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 16px 18px;
+  margin-bottom: 18px;
+  box-shadow: 0 6px 18px rgba(120, 72, 30, .06);
+}
+.field { display: grid; gap: 6px; flex: 1 1 220px; font-size: .9rem; }
+.field input, .field select { width: 100%; font-size: 1rem; font-weight: 400; }
 
 /* Top bar */
 .topbar {
@@ -176,19 +213,7 @@ h1 { margin: 4px 0 0; font-size: 2.2rem; font-weight: 800; color: #134e4a; }
   border-radius: 16px;
   box-shadow: 0 6px 18px rgba(120, 72, 30, .06);
 }
-.profile-form label { display: grid; gap: 7px; font-weight: 700; color: #134e4a; }
-.profile-form input {
-  border: 1px solid #d9cfc4;
-  border-radius: 10px;
-  padding: 11px 12px;
-  background: #fffdfa;
-  transition: border-color .15s ease, box-shadow .15s ease;
-}
-.profile-form input:focus {
-  outline: none;
-  border-color: var(--brand-bright);
-  box-shadow: 0 0 0 4px var(--focus);
-}
+.profile-form label { display: grid; gap: 7px; }
 .profile-form button {
   width: fit-content;
   border: 0;
