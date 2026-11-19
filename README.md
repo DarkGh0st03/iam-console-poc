@@ -59,15 +59,6 @@ iam-console-poc/
     └── test-profile.json
 ```
 
-## Styling
-
-`apps/frontend/src/styles.css` holds the whole look of the console. Inputs,
-selects, textareas and labels share one base style, so new controls match
-the existing ones. Reusable classes: `.toolbar` (a row of filters or actions
-above a list, in a card) and `.field` (one labelled control inside it, label
-text then the control); `.user-card`, `.department-tag`, `.status-badge`,
-`.avatar` for the user list.
-
 ## Security
 
 `security/` holds the authentication middleware and its configuration,
